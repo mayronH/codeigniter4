@@ -1,0 +1,41 @@
+.card {
+    background-color: var(--bg-darker);
+
+    padding: 25px;
+
+    margin-top: 20px;
+
+    border-top: 5px solid var(--accent);
+}
+
+.btn {
+    min-width: 80px;
+}
+
+.btn-submit {
+    background-color: var(--accent);
+
+    border-color: var(--accent);
+
+    color: #fff;
+
+    padding: 0.5rem 0.75rem;
+
+    transition: all 0.2s;
+}
+
+.btn-submit:is(:hover, :focus, :focus-visible) {
+    filter: opacity(0.8);
+
+    transform: scale(1.1);
+}
+
+.form-control,
+.form-control:is(:focus, :focus-visible) {
+    background-color: var(--bg-color);
+
+    color: var(--text);
+
+    caret-color: var(--accent);
+    border-color: var(--accent);
+}

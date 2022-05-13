@@ -1,0 +1,21 @@
+<?= $this->extend("layout/master") ?>
+
+<?= $this->section("styles") ?>
+
+<?= $this->endSection("styles") ?>
+
+<?= $this->section("content") ?>
+
+<section class="container">
+    <div class="row justify-content-center">
+        <h1 class="title">Hello World!</h1>
+    </div>
+    <div class="row">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui laborum eveniet recusandae dignissimos facere quae eos voluptate dolorum nam incidunt accusamus, vitae quidem. Fugiat molestiae facilis nihil enim. Blanditiis sapiente sequi earum voluptates corporis, reiciendis facilis odit tempora consequatur velit illo sed temporibus enim nam, placeat commodi rerum saepe, voluptas dicta ab totam voluptatem nulla aliquam aut. Maxime aliquam amet eos odio ipsa ipsum unde est placeat quibusdam tempore odit, voluptatum maiores repudiandae minus, voluptates nesciunt consequatur, neque sit sapiente ea corporis! Quidem dolor neque voluptate, minima laboriosam ea quis aliquid expedita, libero, sunt quisquam amet fugiat! Modi laudantium eveniet in voluptatum. Distinctio hic reiciendis ex doloribus mollitia perspiciatis perferendis inventore itaque voluptates fugit iure, laudantium amet eaque quae, aliquam maiores, consectetur commodi impedit consequatur labore error neque? Quae dolor dignissimos in ducimus reiciendis est molestiae fuga aspernatur eum eaque quidem vero soluta voluptatem, aut sint modi expedita laudantium commodi aperiam. Sunt amet minus quibusdam temporibus repudiandae assumenda quaerat eius, cupiditate fugit facere quae consequuntur, voluptate excepturi optio voluptatum dolores, labore asperiores itaque fugiat! Tempora, modi.</p>
+        <p>Molestias est quidem illum ex voluptates obcaecati! Et doloribus, illum aliquam tempora neque sunt consectetur maiores modi nobis quisquam alias omnis dolores at architecto? Veritatis incidunt maiores repellat est nobis veniam eos iusto dolor, sed fugit ut laborum ratione voluptatum. Porro rem, accusantium praesentium provident odio totam ad sint, corporis omnis sunt error quasi illum soluta placeat iure fugiat accusamus incidunt, nisi dolorem nobis laudantium? Mollitia perferendis maxime praesentium suscipit ullam laboriosam accusamus, temporibus placeat reprehenderit nam delectus maiores officia eveniet quis excepturi fuga, beatae obcaecati saepe? Sed, est doloremque expedita ea adipisci cumque explicabo suscipit nulla magnam nostrum distinctio laudantium dolorem praesentium sint tempore asperiores totam maiores consequatur facilis ex sequi a optio mollitia unde.</p>
+        <p>Ab nulla quis praesentium neque vel architecto obcaecati accusantium consequuntur ipsum reiciendis? Excepturi eius et cumque laudantium nisi officia impedit exercitationem delectus animi molestiae, mollitia ex quia perspiciatis accusamus ipsa odit commodi culpa laborum amet dignissimos eum nesciunt voluptate! Laboriosam eum nisi earum saepe temporibus vero nemo cumque dolores reiciendis exercitationem sed amet, cupiditate voluptatum vitae quas! Velit animi molestiae quidem perferendis, quia perspiciatis officiis quisquam, facilis ducimus obcaecati dolores.</p>
+        <p>Voluptatem modi, sapiente facere, rem repudiandae velit deleniti labore architecto harum inventore nobis obcaecati? Non, voluptatem fuga voluptas optio, fugiat libero, maiores beatae possimus quia nesciunt veniam excepturi delectus itaque. Perferendis fuga mollitia dignissimos quam sint repellat repellendus veniam optio dolorem. Est sequi molestiae facilis tenetur quasi, tempore cum! Dolor quisquam fugit ex laboriosam tenetur dolorum eveniet vero a velit reiciendis nostrum nihil, ipsum unde iusto, eaque, laborum accusamus! Ab quae minus expedita, officiis eveniet ducimus, voluptatum doloremque quos quaerat aut molestiae velit sint laboriosam similique illum culpa. Exercitationem molestias aut alias nemo accusamus, quis dolor impedit id, animi veritatis repellat corrupti facere maiores non, esse omnis dignissimos eaque voluptates. Voluptatibus fuga quidem quis exercitationem minus quasi veniam consequatur praesentium dolores, cum placeat fugit soluta magni vel saepe mollitia qui error culpa quia labore! Assumenda totam explicabo minus.</p>
+    </div>
+</section>
+
+<?= $this->endSection() ?>
