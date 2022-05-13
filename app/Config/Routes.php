@@ -31,11 +31,14 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
-$routes->get('site', 'Site::index');
+$routes->get('/', 'Site::index');
 
 $routes->get('add-user', 'UserController::addUser');
 $routes->get('save-user', 'UserController::saveUser');
+
+$routes->get('fullcalendar', 'CalendarController::index');
+$routes->get('event', 'CalendarController::loadData');
+$routes->post('add-event', 'CalendarController::addEvent');
 
 /*
  * --------------------------------------------------------------------
