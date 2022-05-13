@@ -22,7 +22,7 @@ class UserController extends BaseController
         if ($this->request->getMethod() == "post") {
             $rules = [
                 "name" => "required",
-                "email" => "valid_email|required",
+                "email" => "required|valid_email",
                 "phone" => "required"
             ];
 
@@ -37,20 +37,20 @@ class UserController extends BaseController
             $userModel = new UserModel();
 
             $data = [
-                "name" => $this->request->getVar("name"),
-                "email" => $this->request->getVar("email"),
-                "phone" => $this->request->getVar("phone")
+                "name" => $this->request->getPost("name"),
+                "email" => $this->request->getPost("email"),
+                "phone" => $this->request->getPost("phone")
             ];
 
             $response = [
-                "status" => 1,
-                "msg" => "User created"
+                "status" => 0,
+                "msg" => "Fail to create user"
             ];
 
             if ($userModel->insert($data)) {
                 $response = [
-                    "status" => 0,
-                    "msg" => "Fail to create user"
+                    "status" => 1,
+                    "msg" => "User created"
                 ];
                 return $this->response->setJSON($response);
             }

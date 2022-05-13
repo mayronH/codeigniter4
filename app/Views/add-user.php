@@ -45,7 +45,7 @@
 
 <?= $this->section("scripts") ?>
 
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://unpkg.com/imask"></script>
 
 <script>

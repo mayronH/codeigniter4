@@ -1,22 +1,22 @@
 $(function () {
-    $('#form_user').submit((e) => {
+    $('#form_user').submit(function (e) {
         e.preventDefault();
 
-        const formData = $('#form_user').serialize();
+        const formData = new FormData(this);
 
         $.ajax({
             url: 'http://localhost:8080/usercontroller/saveUser',
             type: "POST",
             cache: false,
             data: formData,
-            processDate: false,
+            processData: false,
             contentType: false,
             dataType: "JSON",
             success: (data) => {
                 if (data.status) {
-                    Swal.fire('User created!', '', 'success')
+                    Swal.fire('Success!', data.msg, 'success')
                 } else {
-                    Swal.fire('Error', data.msg, 'danger')
+                    Swal.fire('Error', data.msg, 'error')
                 }
             },
             error: (response) => {
