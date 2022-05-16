@@ -8,10 +8,16 @@
         <div class="collapse navbar-collapse  justify-content-end" id="navbarSupportedContent">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" href="/add-user">User</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/fullcalendar">Calendar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/list-members">Member</a>
                 </li>
             </ul>
         </div>

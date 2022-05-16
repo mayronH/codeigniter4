@@ -1,0 +1,69 @@
+.panel {
+    width: 100%;
+
+    background-color: var(--bg-darker);
+
+    padding: 25px;
+}
+
+.panel-heading {
+    margin-bottom: 2rem;
+}
+
+.table th {
+    border-top: none;
+    border-bottom: 2px solid var(--accent) !important;
+
+    color: #fff;
+}
+
+.panel-heading .button {
+    display: flex;
+    justify-content: end;
+}
+
+.panel-heading .btn {
+    background-color: var(--green);
+
+    color: #fff;
+}
+
+.alert-danger {
+    background-color: var(--red);
+
+    color: #fff;
+}
+
+.errors ul {
+    list-style: none;
+
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.actions {
+    text-align: center;
+}
+
+.btn-edit {
+    background-color: var(--blue);
+}
+
+.btn-delete {
+    background-color: var(--red);
+}
+
+.table tbody tr:nth-of-type(odd) {
+    background-color: var(--bg-color);
+}
+
+.table tbody td {
+    border-right: 1px solid;
+}
+
+.table tbody .actions {
+    border-right: none;
+}

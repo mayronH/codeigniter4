@@ -40,6 +40,11 @@ $routes->get('fullcalendar', 'CalendarController::index');
 $routes->get('event', 'CalendarController::loadData');
 $routes->post('add-event', 'CalendarController::addEvent');
 
+$routes->match(['get', 'post'], 'add-member', 'MemberController::addMember');
+$routes->match(['get', 'post'], 'edit-member/(:num)', 'MemberController::editMember/$1');
+$routes->get('list-members', 'MemberController::listMember');
+$routes->get('delete-member/(:num)','MemberController::deleteMember/$1');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

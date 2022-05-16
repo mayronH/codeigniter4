@@ -7,11 +7,6 @@ use App\Models\UserModel;
 
 class UserController extends BaseController
 {
-    public function __construct()
-    {
-        helper(["url"]);
-    }
-
     public function addUser()
     {
         return view('add-user');
@@ -19,17 +14,17 @@ class UserController extends BaseController
 
     public function saveUser()
     {
-        if ($this->request->getMethod() == "post") {
+        if ($this->request->getMethod() == 'post') {
             $rules = [
-                "name" => "required",
-                "email" => "required|valid_email",
-                "phone" => "required"
+                'name' => 'required',
+                'email' => 'required|valid_email',
+                'phone' => 'required'
             ];
 
             if (!$this->validate($rules)) {
                 $response = [
-                    "status" => 0,
-                    "msg" => "Validation error"
+                    'status' => 0,
+                    'msg' => 'Validation error'
                 ];
                 return $this->response->setJSON($response);
             }
@@ -37,20 +32,20 @@ class UserController extends BaseController
             $userModel = new UserModel();
 
             $data = [
-                "name" => $this->request->getPost("name"),
-                "email" => $this->request->getPost("email"),
-                "phone" => $this->request->getPost("phone")
+                'user_name' => $this->request->getPost('name'),
+                'user_email' => $this->request->getPost('email'),
+                'user_phone' => $this->request->getPost('phone')
             ];
 
             $response = [
-                "status" => 0,
-                "msg" => "Fail to create user"
+                'status' => 0,
+                'msg' => 'Fail to create user'
             ];
 
             if ($userModel->insert($data)) {
                 $response = [
-                    "status" => 1,
-                    "msg" => "User created"
+                    'status' => 1,
+                    'msg' => 'User created'
                 ];
                 return $this->response->setJSON($response);
             }

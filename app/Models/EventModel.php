@@ -8,16 +8,16 @@ class EventModel extends Model
 {
     protected $DBGroup          = 'default';
     protected $table            = 'events';
-    protected $primaryKey       = 'id';
+    protected $primaryKey       = 'event_id';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
-        "title",
-        "start",
-        "end",
+        "event_title",
+        "event_start",
+        "event_end",
     ];
 
     // Dates

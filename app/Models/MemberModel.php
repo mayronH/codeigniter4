@@ -4,20 +4,20 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class UserModel extends Model
+class MemberModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'users';
-    protected $primaryKey       = 'user_id';
+    protected $table            = 'members';
+    protected $primaryKey       = 'member_id';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
-        "user_name",
-        "user_email",
-        "user_phone"
+        'member_name',
+        'member_email',
+        'member_mobile',
     ];
 
     // Dates

@@ -3,6 +3,9 @@
     --text: #c2bcb0;
     --bg-darker: #262726;
     --accent: #924cdd;
+    --green: #4cdd5f;
+    --red: #dd4c4c;
+    --blue: #4c5bdd;
 }
 
 * {
@@ -51,6 +54,20 @@ body {
 .content {
     flex: 1;
     margin: 50px 0;
+}
+
+.btn {
+    min-width: 80px;
+
+    padding: 0.5rem 0.75rem;
+
+    transition: all 0.2s;
+}
+
+.btn:is(:hover, :focus, :focus-visible) {
+    filter: opacity(0.8);
+
+    transform: scale(1.1);
 }
 
 .footer {
