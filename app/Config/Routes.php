@@ -45,6 +45,11 @@ $routes->match(['get', 'post'], 'edit-member/(:num)', 'MemberController::editMem
 $routes->get('list-members', 'MemberController::listMember');
 $routes->get('delete-member/(:num)','MemberController::deleteMember/$1');
 
+$routes->get('people', 'PersonController::index');
+$routes->get('add-person', 'PersonController::addPerson');
+$routes->get('delete-person/(:num)', 'PersonController::deletePerson/$1');
+$routes->get('person/(:num)', 'PersonController::getPerson/$1');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
