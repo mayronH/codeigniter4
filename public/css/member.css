@@ -14,13 +14,6 @@
     overflow-x: auto;
 }
 
-.table th {
-    border-top: none;
-    border-bottom: 2px solid var(--accent) !important;
-
-    color: #fff;
-}
-
 .panel-heading .button {
     display: flex;
     justify-content: end;
@@ -62,16 +55,4 @@
 
 .btn-delete {
     background-color: var(--red);
-}
-
-.table tbody tr:nth-of-type(odd) {
-    background-color: var(--bg-color);
-}
-
-.table tbody td {
-    border-right: 1px solid;
-}
-
-.table tbody .actions {
-    border-right: none;
 }

@@ -1,0 +1,65 @@
+.table th {
+    border-top: none;
+    border-bottom: 2px solid var(--accent) !important;
+
+    color: #fff;
+}
+
+.table tbody tr:nth-of-type(odd) {
+    background-color: var(--bg-color);
+}
+
+.table tbody td {
+    border-right: 1px solid;
+}
+
+.table tbody .actions {
+    border-right: none;
+}
+
+@media screen and (max-width: 768px) {
+    .table thead {
+        position: absolute;
+
+        clip: rect(0 0 0 0);
+
+        margin: -1px;
+
+        overflow: hidden;
+
+        height: 1px;
+        width: 1px;
+    }
+
+    .table tr {
+        display: block;
+
+        margin-bottom: 0.75rem;
+    }
+    .table td {
+        display: block;
+
+        text-align: right;
+    }
+
+    .table td:first-child {
+        border-top: none;
+    }
+
+    .table tbody td {
+        border-right: none;
+    }
+
+    .table td::before {
+        content: attr(data-label);
+
+        float: left;
+
+        font-weight: bold;
+    }
+
+    .table tbody tr:nth-of-type(even),
+    .table tbody tr:nth-of-type(odd) {
+        background-color: var(--bg-color);
+    }
+}

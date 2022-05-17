@@ -4,6 +4,7 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
 <?= link_tag('css/member.css') ?>
+<?= link_tag('css/table.css') ?>
 
 <?= $this->endSection("styles") ?>
 
@@ -31,11 +32,11 @@
                     <tbody>
                         <?php foreach ($members as $member) { ?>
                             <tr>
-                                <td><?= $member['member_id']  ?></td>
-                                <td><?= $member['member_name']  ?></td>
-                                <td><?= $member['member_email']  ?></td>
-                                <td><?= $member['member_mobile']  ?></td>
-                                <td class="actions">
+                                <td data-label="#"><?= $member['member_id']  ?></td>
+                                <td data-label="Name"><?= $member['member_name']  ?></td>
+                                <td data-label="E-Mail"><?= $member['member_email']  ?></td>
+                                <td data-label="Mobile"><?= $member['member_mobile']  ?></td>
+                                <td data-label="Actions" class="actions">
                                     <a href="<?= base_url('edit-member/' . $member['member_id']); ?>" class="btn btn-edit">📝</a>
                                     <a href="<?= base_url('delete-member/' . $member['member_id']); ?>" class="btn btn-delete">🚫</a>
                                 </td>
