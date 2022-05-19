@@ -3,7 +3,7 @@
 <?= $this->section("styles") ?>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
-<?= link_tag('css/member.css') ?>
+<?= link_tag('css/crud-page.css') ?>
 <?= link_tag('css/table.css') ?>
 
 <?= $this->endSection("styles") ?>

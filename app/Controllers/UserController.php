@@ -15,20 +15,6 @@ class UserController extends BaseController
     public function saveUser()
     {
         if ($this->request->getMethod() == 'post') {
-            $rules = [
-                'name' => 'required',
-                'email' => 'required|valid_email',
-                'phone' => 'required'
-            ];
-
-            if (!$this->validate($rules)) {
-                $response = [
-                    'status' => 0,
-                    'msg' => 'Validation error'
-                ];
-                return $this->response->setJSON($response);
-            }
-
             $userModel = new UserModel();
 
             $data = [
@@ -38,14 +24,15 @@ class UserController extends BaseController
             ];
 
             $response = [
-                'status' => 0,
-                'msg' => 'Fail to create user'
+                'status' => 1,
+                'msg' => 'User created'
             ];
 
-            if ($userModel->insert($data)) {
+            // Using the validation from the model
+            if ($userModel->save($data) === false) {
                 $response = [
-                    'status' => 1,
-                    'msg' => 'User created'
+                    'status' => 0,
+                    'msg' => 'Validation error'
                 ];
                 return $this->response->setJSON($response);
             }

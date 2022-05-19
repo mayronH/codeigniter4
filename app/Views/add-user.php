@@ -19,17 +19,17 @@
                 <form action="javascript:void(0)" method="post" id="form_user">
                     <div class="form-group">
                         <label for="name" class="control-label">Name:</label>
-                        <input type="text" name="name" id="name" class="form-control" required placeholder="Name:">
+                        <input type="text" name="name" id="name" class="form-control" placeholder="Name:">
                     </div>
 
                     <div class="form-group">
                         <label for="email" class="control-label">E-mail</label>
-                        <input type="email" name="email" id="email" class="form-control" required placeholder="E-mail:">
+                        <input type="email" name="email" id="email" class="form-control" placeholder="E-mail:">
                     </div>
 
                     <div class="form-group">
                         <label for="phone" class="control-label">Phone:</label>
-                        <input type="tel" name="phone" id="phone" class="form-control" required placeholder="Phone:">
+                        <input type="tel" name="phone" id="phone" class="form-control" placeholder="Phone:">
                     </div>
 
                     <div class="form-group d-flex justify-content-end">

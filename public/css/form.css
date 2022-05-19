@@ -8,6 +8,22 @@
     border-top: 5px solid var(--accent);
 }
 
+.alert-danger {
+    background-color: var(--red);
+
+    color: #fff;
+}
+
+.errors ul {
+    list-style: none;
+
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .btn-submit {
     background-color: var(--accent);
 

@@ -4,6 +4,7 @@
 
 <?= link_tag('css/form.css') ?>
 <?= link_tag('css/crud-page.css') ?>
+<?= link_tag('css/student.css') ?>
 
 <?= $this->endSection("styles") ?>
 
@@ -11,7 +12,7 @@
 
 <section class="container">
     <div class="row justify-content-center">
-        <h1 class="title">New Member</h1>
+        <h1 class="title">New Student</h1>
     </div>
     <div class="row">
         <div class="col">
@@ -22,10 +23,15 @@
                         <?= $validation->listErrors(); ?>
                     </div>
                 <?php } ?>
-                <form action="<?= base_url('add-member') ?>" method="post" id="form_member">
+                <form action="<?= base_url('add-student') ?>" method="post" id="form_student" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="name" class="control-label">Name:</label>
                         <input type="text" name="name" id="name" class="form-control" placeholder="Name:">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cpf" class="control-label">CPF:</label>
+                        <input type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF:">
                     </div>
 
                     <div class="form-group">
@@ -34,12 +40,13 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="mobile" class="control-label">Mobile:</label>
-                        <input type="tel" name="mobile" id="mobile" class="form-control" placeholder="Mobile:">
+                        <label for="image">Profile Pic</label>
+                        <img alt="preview" id="preview" class="preview hidden" />
+                        <input type="file" accept="image/*" class="form-control" name="image" id="image" onchange="previewImage(event)">
                     </div>
 
                     <div class="form-group d-flex justify-content-end">
-                        <button type="submit" class="btn btn-submit"> 🤵 save</button>
+                        <button type="submit" class="btn btn-submit"> 👨‍🎓 save</button>
                     </div>
                 </form>
             </div>
@@ -53,9 +60,16 @@
 <script src="https://unpkg.com/imask"></script>
 
 <script>
-    const mask = IMask(document.querySelector('#mobile'), {
-        mask: '(00) 00000-0000'
+    const mask = IMask(document.querySelector('#cpf'), {
+        mask: '000.000.000-00'
     })
+
+    const previewImage = e => {
+        const preview = document.querySelector('#preview');
+        preview.classList.remove('hidden');
+        preview.src = URL.createObjectURL(e.target.files[0]);
+        preview.onload = () => URL.revokeObjectURL(preview.src)
+    }
 </script>
 
 <?= $this->endSection("scripts") ?>

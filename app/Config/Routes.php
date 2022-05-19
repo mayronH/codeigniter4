@@ -50,6 +50,11 @@ $routes->get('add-person', 'PersonController::addPerson');
 $routes->get('delete-person/(:num)', 'PersonController::deletePerson/$1');
 $routes->get('person/(:num)', 'PersonController::getPerson/$1');
 
+$routes->match(['get', 'post'], 'add-student', 'StudentController::addStudent');
+$routes->match(['get', 'post'], 'edit-student/(:num)', 'StudentController::editStudent/$1');
+$routes->get('list-students', 'StudentController::listStudent');
+$routes->get('delete-student/(:num)','StudentController::deleteStudent/$1');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

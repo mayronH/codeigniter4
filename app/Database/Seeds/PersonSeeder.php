@@ -6,12 +6,12 @@ use App\Models\PersonModel;
 use CodeIgniter\Database\Seeder;
 use CodeIgniter\I18n\Time;
 
-class MemberSeeder extends Seeder
+class PersonSeeder extends Seeder
 {
     public function run()
     {
         $personModel = new PersonModel();
-        
+
         // Creating fake data
         $faker = \Faker\Factory::create();
 

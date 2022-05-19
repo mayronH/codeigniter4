@@ -10,13 +10,34 @@ class MemberController extends BaseController
     public function addMember()
     {
         if ($this->request->getMethod() == 'post') {
+            // Unique email field
+            // Differente rules for validation
             $rules = [
                 'name' => 'required|min_length[3]',
-                'email' => 'required|valid_email',
+                'email' => 'required|valid_email|is_unique[members.member_email]|min_length[6]',
                 'mobile' => 'required|min_length[9]|max_length[15]'
             ];
 
-            if (!$this->validate($rules)) {
+            // Custom messages for validation
+            $messages = [
+                'name' => [
+                    'required' => 'Name is Required',
+                    'min_length' => 'Name need to be more than 3 characters',
+                ],
+                'email' => [
+                    'required' => 'E-mail is Required',
+                    'valid_email' => 'E-mail not valid, please try again',
+                    'is_unique' => 'E-mail address is already used',
+                    'min_length' => 'E-mail need to be more than 6 characters',
+                ],
+                'mobile' => [
+                    'required' => 'Mobile Phone is Required',
+                    'min_length' => 'Phone need to be more than 9 characters',
+                    'max_length' => 'Phone too long',
+                ]
+            ];
+
+            if (!$this->validate($rules, $messages)) {
                 return view('member/add-member', [
                     'validation' => $this->validator,
                 ]);
@@ -47,11 +68,29 @@ class MemberController extends BaseController
         if ($this->request->getMethod() == 'post') {
             $rules = [
                 'name' => 'required|min_length[3]',
-                'email' => 'required|valid_email',
+                'email' => 'required|valid_email|is_unique[members.member_email]|min_length[6]',
                 'mobile' => 'required|min_length[9]|max_length[15]'
             ];
 
-            if (!$this->validate($rules)) {
+            $messages = [
+                'name' => [
+                    'required' => 'Name is Required',
+                    'min_length' => 'Name need to be more than 3 characters',
+                ],
+                'email' => [
+                    'required' => 'E-mail is Required',
+                    'valid_email' => 'E-mail not valid, please try again',
+                    'is_unique' => 'E-mail address is already used',
+                    'min_length' => 'E-mail need to be more than 6 characters',
+                ],
+                'mobile' => [
+                    'required' => 'Mobile Phone is Required',
+                    'min_length' => 'Phone need to be more than 9 characters',
+                    'max_length' => 'Phone too long',
+                ]
+            ];
+
+            if (!$this->validate($rules, $messages)) {
                 return view('member/edit-member', [
                     'validation' => $this->validator,
                     'member' => $selectedMember,
