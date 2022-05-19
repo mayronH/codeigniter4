@@ -71,6 +71,18 @@ body {
     transform: scale(1.1);
 }
 
+.btn-login {
+    color: #fff;
+
+    background-color: var(--blue);
+}
+
+.btn-logout {
+    color: #fff;
+
+    background-color: var(--red);
+}
+
 .footer {
     text-transform: lowercase;
     text-align: center;

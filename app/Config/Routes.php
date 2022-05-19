@@ -33,27 +33,29 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Site::index');
 
-$routes->get('add-user', 'UserController::addUser');
-$routes->get('save-user', 'UserController::saveUser');
+$routes->match(['get', 'post'], 'login', 'UserController::login');
+$routes->get('logout', 'UserController::logout');
+$routes->get('add-user', 'UserController::addUser', ['filter' => 'auth']);
+$routes->get('save-user', 'UserController::saveUser', ['filter' => 'auth']);
 
-$routes->get('fullcalendar', 'CalendarController::index');
-$routes->get('event', 'CalendarController::loadData');
-$routes->post('add-event', 'CalendarController::addEvent');
+$routes->get('fullcalendar', 'CalendarController::index', ['filter' => 'auth']);
+$routes->get('event', 'CalendarController::loadData', ['filter' => 'auth']);
+$routes->post('add-event', 'CalendarController::addEvent', ['filter' => 'auth']);
 
-$routes->match(['get', 'post'], 'add-member', 'MemberController::addMember');
-$routes->match(['get', 'post'], 'edit-member/(:num)', 'MemberController::editMember/$1');
+$routes->match(['get', 'post'], 'add-member', 'MemberController::addMember', ['filter' => 'auth']);
+$routes->match(['get', 'post'], 'edit-member/(:num)', 'MemberController::editMember/$1', ['filter' => 'auth']);
 $routes->get('list-members', 'MemberController::listMember');
-$routes->get('delete-member/(:num)','MemberController::deleteMember/$1');
+$routes->get('delete-member/(:num)','MemberController::deleteMember/$1', ['filter' => 'auth']);
 
 $routes->get('people', 'PersonController::index');
-$routes->get('add-person', 'PersonController::addPerson');
-$routes->get('delete-person/(:num)', 'PersonController::deletePerson/$1');
-$routes->get('person/(:num)', 'PersonController::getPerson/$1');
+$routes->get('add-person', 'PersonController::addPerson', ['filter' => 'auth']);
+$routes->get('delete-person/(:num)', 'PersonController::deletePerson/$1', ['filter' => 'auth']);
+$routes->get('person/(:num)', 'PersonController::getPerson/$1', ['filter' => 'auth']);
 
-$routes->match(['get', 'post'], 'add-student', 'StudentController::addStudent');
-$routes->match(['get', 'post'], 'edit-student/(:num)', 'StudentController::editStudent/$1');
+$routes->match(['get', 'post'], 'add-student', 'StudentController::addStudent', ['filter' => 'auth']);
+$routes->match(['get', 'post'], 'edit-student/(:num)', 'StudentController::editStudent/$1', ['filter' => 'auth']);
 $routes->get('list-students', 'StudentController::listStudent');
-$routes->get('delete-student/(:num)','StudentController::deleteStudent/$1');
+$routes->get('delete-student/(:num)','StudentController::deleteStudent/$1', ['filter' => 'auth']);
 
 /*
  * --------------------------------------------------------------------

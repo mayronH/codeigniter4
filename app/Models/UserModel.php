@@ -17,7 +17,8 @@ class UserModel extends Model
     protected $allowedFields    = [
         'user_name',
         'user_email',
-        'user_phone'
+        'user_phone',
+        'user_password'
     ];
 
     // Dates
@@ -31,7 +32,8 @@ class UserModel extends Model
     protected $validationRules      = [
         'user_name' => 'required',
         'user_email' => 'required|valid_email|is_unique[users.user_email]',
-        'user_phone' => 'required'
+        'user_phone' => 'required',
+        'user_password' => 'required'
     ];
     protected $validationMessages   = [];
     protected $skipValidation       = false;
@@ -39,7 +41,7 @@ class UserModel extends Model
 
     // Callbacks
     protected $allowCallbacks = true;
-    protected $beforeInsert   = [];
+    protected $beforeInsert   = ['passwordHash'];
     protected $afterInsert    = [];
     protected $beforeUpdate   = [];
     protected $afterUpdate    = [];
@@ -47,4 +49,13 @@ class UserModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    protected function passwordHash(array $data)
+    {
+        if (isset($data['data']['user_password'])) {
+            $data['data']['user_password'] = password_hash($data['data']['user_password'], PASSWORD_BCRYPT);
+
+            return $data;
+        }
+    }
 }

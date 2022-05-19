@@ -23,6 +23,11 @@
                     <a class="nav-link" href="/list-students">Student</a>
                 </li>
             </ul>
+            <?php if (session()->get('isLoggedIn')) { ?>
+                <a href="<?= base_url('logout') ?>" class="btn btn-logout"> 🚫 Logout</a>
+            <?php } else { ?>
+                <a href="<?= base_url('login') ?>" class="btn btn-login"> 🔐 Login</a>
+            <?php } ?>
         </div>
     </nav>
 </header>

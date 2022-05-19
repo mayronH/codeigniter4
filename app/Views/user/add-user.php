@@ -32,6 +32,16 @@
                         <input type="tel" name="phone" id="phone" class="form-control" placeholder="Phone:">
                     </div>
 
+                    <div class="form-group">
+                        <label for="password" class="control-label">Password:</label>
+                        <input type="password" name="password" id="password" class="form-control" placeholder="Password:">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirm-password" class="control-label">Confirm Password:</label>
+                        <input type="password" name="confirm-password" id="confirm-password" class="form-control" placeholder="Confirm Password:">
+                    </div>
+
                     <div class="form-group d-flex justify-content-end">
                         <button type="submit" class="btn btn-submit"> 🧑 save</button>
                     </div>
