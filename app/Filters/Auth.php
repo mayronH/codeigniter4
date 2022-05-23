@@ -25,6 +25,7 @@ class Auth implements FilterInterface
      */
     public function before(RequestInterface $request, $arguments = null)
     {
+        // Run before any method of the controller
         if(!session()->get('isLoggedIn')){
             return redirect()->to(site_url('login'));
         }
@@ -44,6 +45,6 @@ class Auth implements FilterInterface
      */
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
-        //
+        // Run after the controller
     }
 }
